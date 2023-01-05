@@ -1,6 +1,6 @@
 import "../styles/style.css";
 
-let pokemon = "ditto";
+let pokemon = "charmander";
 const pokemonapi = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
 
 async function getData(url) {
