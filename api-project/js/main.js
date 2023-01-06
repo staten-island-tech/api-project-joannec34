@@ -1,7 +1,6 @@
 import "../styles/style.css";
 
-let pokemon = "charmander";
-const pokemonapi = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
+const catgifs = `https://cataas.com`;
 
 async function getData(url) {
   try {
@@ -11,7 +10,7 @@ async function getData(url) {
       throw error(response);
     } else {
       const data = await response.json();
-      document.getElementById("api-response").textContent = data.name;
+      document.getElementById("api-response").textContent = data;
       console.log(data);
     }
   } catch (error) {
@@ -20,4 +19,4 @@ async function getData(url) {
   }
 }
 
-getData(pokemonapi);
+getData(catgifs);
