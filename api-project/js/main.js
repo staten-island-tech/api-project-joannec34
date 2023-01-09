@@ -1,6 +1,6 @@
 import "../styles/style.css";
 
-const catgifs = `https://cataas.com`;
+const shibaapi = `http://shibe.online/api/shibes`;
 
 async function getData(url) {
   try {
@@ -10,7 +10,12 @@ async function getData(url) {
       throw error(response);
     } else {
       const data = await response.json();
-      document.getElementById("api-response").textContent = data;
+      document
+        .getElementById("api-response")
+        .insertAdjacentHTML(
+          "afterbegin",
+          `<img id="shiba-img" src="${data}" alt="">`
+        );
       console.log(data);
     }
   } catch (error) {
@@ -19,4 +24,4 @@ async function getData(url) {
   }
 }
 
-getData(catgifs);
+getData(shibaapi);
