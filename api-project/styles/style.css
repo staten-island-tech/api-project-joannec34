@@ -7,7 +7,26 @@ body,
   font-size: 62.5%;
 }
 
-#shiba-img {
+body {
+  background-color: aliceblue;
+}
+
+h1 {
+  font-size: 1000%;
+  background-color: cadetblue;
+}
+
+#api-images {
   height: 500px;
   width: auto;
+}
+
+.btns {
+  font-size: 500%;
+  width: 200px;
+  padding: 2%;
+  margin: 2%;
+  background-color: aquamarine;
+  border-radius: 100%;
+  border: none;
 }

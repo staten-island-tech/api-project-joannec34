@@ -1,6 +1,8 @@
 import "../styles/style.css";
 
 const shibaapi = `http://shibe.online/api/shibes`;
+const catapi = `http://shibe.online/api/cats`;
+const birdapi = `http://shibe.online/api/birds`;
 
 async function getData(url) {
   try {
@@ -10,13 +12,8 @@ async function getData(url) {
       throw error(response);
     } else {
       const data = await response.json();
-      document
-        .getElementById("api-response")
-        .insertAdjacentHTML(
-          "afterbegin",
-          `<img id="shiba-img" src="${data}" alt="">`
-        );
       console.log(data);
+      createImage(data);
     }
   } catch (error) {
     console.log(error);
@@ -24,4 +21,23 @@ async function getData(url) {
   }
 }
 
-getData(shibaapi);
+const createImage = function (data) {
+  document
+    .getElementById("api-response")
+    .insertAdjacentHTML(
+      "beforeend",
+      `<img id="api-images" src="${data}" alt="">`
+    );
+};
+
+document.querySelector("#shiba-btn").addEventListener("click", function () {
+  getData(shibaapi);
+});
+
+document.querySelector("#cat-btn").addEventListener("click", function () {
+  getData(catapi);
+});
+
+document.querySelector("#bird-btn").addEventListener("click", function () {
+  getData(birdapi);
+});
