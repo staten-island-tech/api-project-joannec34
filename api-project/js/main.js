@@ -1,7 +1,9 @@
 import "../styles/style.css";
 
-const shibaapi = `http://shibe.online/api/shibes`;
 const catapi = `http://shibe.online/api/cats`;
+const catfacts = `https://meowfacts.herokuapp.com/`;
+
+const shibaapi = `http://shibe.online/api/shibes`;
 const birdapi = `http://shibe.online/api/birds`;
 
 async function getData(url) {
@@ -21,23 +23,27 @@ async function getData(url) {
   }
 }
 
-const createImage = function (data) {
-  document
-    .getElementById("api-response")
-    .insertAdjacentHTML(
-      "beforeend",
-      `<img id="api-images" src="${data}" alt="">`
-    );
-};
+getData(catfacts);
 
-document.querySelector("#shiba-btn").addEventListener("click", function () {
-  getData(shibaapi);
-});
+const createImage = function (data) {
+  document.querySelector(".gallery").insertAdjacentHTML(
+    "beforeend",
+    `<div class="card">
+      <img id="api-images" src="${data}" alt="">
+      </div>
+      `
+  );
+};
 
 document.querySelector("#cat-btn").addEventListener("click", function () {
   getData(catapi);
 });
 
+/* document.querySelector("#shiba-btn").addEventListener("click", function () {
+  getData(shibaapi);
+});
+
 document.querySelector("#bird-btn").addEventListener("click", function () {
   getData(birdapi);
 });
+ */
