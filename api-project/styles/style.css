@@ -11,31 +11,25 @@ body {
   background-color: aliceblue;
 }
 
-h1 {
+h1, h2 {
   font-size: 1000%;
   background-color: cadetblue;
 }
 
 p {
-  font-size: 500%;
+  font-size: 1000%;
 }
 
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  align-content: center;
-}
-
-.card {
-  
-  background-color: aqua;
-  padding: 10px;
-  margin: 10px;
+  justify-content: center;
 }
 
 #api-images {
-  height: 100px;
+  height: 200px;
   width: auto;
+  margin: 20px;
 }
 
 .btns {

@@ -3,9 +3,6 @@ import "../styles/style.css";
 const catapi = `http://shibe.online/api/cats`;
 const catfacts = `https://meowfacts.herokuapp.com/`;
 
-const shibaapi = `http://shibe.online/api/shibes`;
-const birdapi = `http://shibe.online/api/birds`;
-
 async function getData(url) {
   try {
     const response = await fetch(url);
@@ -15,7 +12,11 @@ async function getData(url) {
     } else {
       const data = await response.json();
       console.log(data);
-      createImage(data);
+      if (url == catapi) {
+        createImage(data);
+      } else {
+        createFact(data);
+      }
     }
   } catch (error) {
     console.log(error);
@@ -23,27 +24,22 @@ async function getData(url) {
   }
 }
 
-getData(catfacts);
-
 const createImage = function (data) {
-  document.querySelector(".gallery").insertAdjacentHTML(
-    "beforeend",
-    `<div class="card">
-      <img id="api-images" src="${data}" alt="">
-      </div>
-      `
-  );
+  document
+    .querySelector(".card")
+    .insertAdjacentHTML(
+      "beforeend",
+      `<img id="api-images" src="${data}" alt="">`
+    );
+};
+
+const createFact = function (data) {
+  document
+    .querySelector(".card")
+    .insertAdjacentHTML("beforeend", `<p>Did you know? ${data.data}</p>`);
 };
 
 document.querySelector("#cat-btn").addEventListener("click", function () {
   getData(catapi);
+  getData(catfacts);
 });
-
-/* document.querySelector("#shiba-btn").addEventListener("click", function () {
-  getData(shibaapi);
-});
-
-document.querySelector("#bird-btn").addEventListener("click", function () {
-  getData(birdapi);
-});
- */
