@@ -1,28 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>api project</title>
 
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>api project</title>
 
-  <body>
+</head>
 
-  <h1>cats</h1>
-  <h2>a collection of cat facts and cat pictures</h2>
+<body>
+
+  <div class="header">
+    <div class="header-bar">
+      <h1>cats</h1>
+      <h2>a collection of cat facts and cat pictures</h2>
+    </div>
+  </div>
+
   <button class="btns" id="cat-btn">meow meow</button>
+  <button class="btns" id="image-btn">meow image</button>
+  <button class="btns" id="fact-btn">meow fact</button>
 
   <div class="gallery">
-  <div class="card"> 
-  <p>Did you know? CAT FACT</p>
-  <img id="api-images" src="https://cdn.shibe.online/cats/d4c9c6e2fbf67dccc75a2bedbdc032b60e5dd7de.jpg" alt="">
-  </div>
+    <div class="card">
+      <p>Did you know? CAT FACT</p>
+      <img id="api-images" src="https://cdn.shibe.online/cats/d4c9c6e2fbf67dccc75a2bedbdc032b60e5dd7de.jpg" alt="">
+    </div>
   </div>
 
   <script type="module" src="./js/main.js"></script>
 
-  </body>
+</body>
 
 </html>

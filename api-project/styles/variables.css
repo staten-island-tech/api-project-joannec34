@@ -1,0 +1,36 @@
+:root {
+    --headerimage: url(https://i.pinimg.com/originals/50/c5/1e/50c51e02a205b44c3449fc128400ff20.jpg);
+
+    /* typography */
+    --h1: 7rem;
+    --h2: 5rem;
+    --h3: 2rem;
+    --h4: 3rem;
+    --p: 2.5rem;
+}
+
+h1 {
+    font-size: var(--h1);
+}
+
+h2 {
+    font-size: var(--h2);
+}
+
+h3 {
+    font-size: var(--h3);
+}
+
+h4 {
+    font-size: var(--h4);
+}
+
+p {
+    font-size: var(--p);
+}
+
+.header {
+    background-image: var(--headerimage);
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -1,3 +1,5 @@
+@import url(variables.css);
+
 html,
 body,
 * {
@@ -8,16 +10,20 @@ body,
 }
 
 body {
-  background-color: aliceblue;
+  background-color: black;
+  color: white;
 }
 
-h1, h2 {
-  font-size: 1000%;
-  background-color: cadetblue;
+.header {
+  padding: 20px;
+  text-align: center;
 }
 
-p {
-  font-size: 1000%;
+.header-bar {
+  background-color: rgba(42, 20, 67, 0.7);
+  padding: 50px;
+  justify-content: center;
+  color: white;
 }
 
 .gallery {

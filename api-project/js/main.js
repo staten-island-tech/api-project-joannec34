@@ -43,3 +43,11 @@ document.querySelector("#cat-btn").addEventListener("click", function () {
   getData(catapi);
   getData(catfacts);
 });
+
+document.querySelector("#image-btn").addEventListener("click", function () {
+  getData(catapi);
+});
+
+document.querySelector("#fact-btn").addEventListener("click", function () {
+  getData(catfacts);
+});
