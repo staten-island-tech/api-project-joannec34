@@ -10,20 +10,12 @@ body,
 }
 
 body {
-  background-color: black;
+  background-color: #080404;
   color: white;
 }
 
 .header {
   padding: 20px;
-  text-align: center;
-}
-
-.header-bar {
-  background-color: rgba(42, 20, 67, 0.7);
-  padding: 50px;
-  justify-content: center;
-  color: white;
 }
 
 .gallery {

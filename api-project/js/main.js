@@ -1,6 +1,8 @@
 import "../styles/style.css";
 
-const catapi = `http://shibe.online/api/cats`;
+const apikey =
+  "live_L4lTvREUVA6tiQ4o8jTTAGbqQvDZeuOzHeSMPIYETL0k4Xk798Ff56LqF29XF3NS";
+const catapi = `https://api.thecatapi.com/v1/images/search?api_key=${apikey}`;
 const catfacts = `https://meowfacts.herokuapp.com/`;
 
 async function getData(url) {
@@ -29,7 +31,7 @@ const createImage = function (data) {
     .querySelector(".card")
     .insertAdjacentHTML(
       "beforeend",
-      `<img id="api-images" src="${data}" alt="">`
+      `<img id="api-images" src="${data.url}" alt="">`
     );
 };
 
