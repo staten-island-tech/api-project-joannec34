@@ -1,22 +1,20 @@
 import "../styles/style.css";
 
-const catapi = `http://shibe.online/api/cats`;
-const catfacts = `https://meowfacts.herokuapp.com/`;
+const apikey =
+  "live_xiXRiLpizUwPBdLWpw9miwbyUjWdKECZjiGDjhaGRA1FsdiLQRUOUfUgfmbtZRqj";
 
 async function getData(url) {
   try {
-    const response = await fetch(url);
+    const response = await fetch(url, { headers: { "x-api-key": apikey } });
     if (response.status < 200 || response.status > 299) {
       console.log(response.status);
       throw error(response);
     } else {
       const data = await response.json();
       console.log(data);
-      if (url == catapi) {
-        createImage(data);
-      } else {
-        createFact(data);
-      }
+      data.forEach((array) => {
+        createImage(array);
+      });
     }
   } catch (error) {
     console.log(error);
@@ -25,29 +23,23 @@ async function getData(url) {
 }
 
 const createImage = function (data) {
-  document
-    .querySelector(".card")
-    .insertAdjacentHTML(
-      "beforeend",
-      `<img id="api-images" src="${data}" alt="">`
-    );
+  document.querySelector(".gallery").insertAdjacentHTML(
+    "beforeend",
+    `<div class="cards">
+    <img class="images" src="${data.url}" alt="${data.id}">
+    </div>`
+  );
 };
 
-const createFact = function (data) {
-  document
-    .querySelector(".card")
-    .insertAdjacentHTML("beforeend", `<p>Did you know? ${data.data}</p>`);
-};
-
-document.querySelector("#cat-btn").addEventListener("click", function () {
-  getData(catapi);
-  getData(catfacts);
-});
-
-document.querySelector("#image-btn").addEventListener("click", function () {
+document.querySelector("#form").addEventListener("submit", function (event) {
+  let catnumber = document.querySelector("#numberinput").value;
+  const catapi = `https://api.thecatapi.com/v1/images/search?limit=${catnumber}`;
+  event.preventDefault();
   getData(catapi);
 });
 
-document.querySelector("#fact-btn").addEventListener("click", function () {
-  getData(catfacts);
+document.querySelector("#remove-btn").addEventListener("click", function () {
+  document.querySelectorAll(".gallery").forEach((card) => {
+    card.textContent = ``;
+  });
 });

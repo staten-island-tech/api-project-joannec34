@@ -1,5 +1,4 @@
 :root {
-    --headerimage: url(https://i.pinimg.com/originals/50/c5/1e/50c51e02a205b44c3449fc128400ff20.jpg);
 
     /* typography */
     --h1: 7rem;
@@ -30,7 +29,6 @@ p {
 }
 
 .header {
-    background-image: var(--headerimage);
     background-repeat: no-repeat;
     background-size: cover;
 }
