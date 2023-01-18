@@ -15,44 +15,64 @@ body {
 }
 
 .header {
-  padding: 20px;
+  padding: 2rem;
+  padding-left: 5rem;
   text-align: left;
 }
 
 .topbar {
+  padding: 2rem;
+  padding-left: 5rem;
   background-color: black;
   color: white;
 }
 
 .formstuff {
-  font-size: 50px;
+  font-size: 5rem;
 }
 
-#remove-btn {
- position: relative;
+#numberinput {
+  border: none;
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+
+.btns {
+  border: none;
+  background-color: var(--lightblue);
+  font-size: 3rem;
+}
+
+#cat-btn {
+  padding: 0.5rem;
+  border-radius: 100%;
+}
+
+#removeall-btn {
+  padding: 2rem;
+  margin-left: 5rem;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
 }
 
 .gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 2rem;
 }
 
 .cards {
-  background-color: aqua;
-  padding: 10px;
-  margin: 20px;
+  background-color: var(--lightblue);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 2rem;
 }
 
 .images {
-  height: 200px;
-  width: 200px;
+  height: 30rem;
+  width: 30rem;
   object-fit: cover;
+  border-radius: 0.5rem;
 }
 
-.btns {
-  border-radius: 100%;
-  border: none;
-  padding: 2%;
-  font-size: 20px;
-}

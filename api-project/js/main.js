@@ -1,8 +1,9 @@
 import "../styles/style.css";
 
 const dom = {
+  gallery: document.querySelector(".gallery"),
   form: document.querySelector("#form"),
-  removebtn: document.querySelector("#remove-btn"),
+  removeallbtn: document.querySelector("#removeall-btn"),
   numberinput: document.querySelector("#numberinput"),
 };
 
@@ -29,11 +30,10 @@ async function getData(url) {
 }
 
 const createImage = function (data) {
-  document.querySelector(".gallery").insertAdjacentHTML(
+  dom.gallery.insertAdjacentHTML(
     "beforeend",
     `<div class="cards">
-    <img class="images" src="${data.url}" alt="${data.id}">
-    <button class="btns" id="fav-btn">☆</button>
+    <img class="images" src="${data.url}" alt="random cat image generated from thecatapi, image data: ${data.id}">
     </div>`
   );
 };
@@ -45,7 +45,7 @@ dom.form.addEventListener("submit", function (event) {
   getData(catapi);
 });
 
-dom.removebtn.addEventListener("click", function () {
+dom.removeallbtn.addEventListener("click", function () {
   document.querySelectorAll(".gallery").forEach((card) => {
     card.textContent = ``;
   });
