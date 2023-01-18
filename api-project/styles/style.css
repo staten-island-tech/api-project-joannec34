@@ -7,15 +7,20 @@ body,
   margin: 0;
   box-sizing: border-box;
   font-size: 62.5%;
+  font-family: Sniglet;
 }
 
 body {
-  background-color: #080404;
-  color: white;
+  background-color: bisque;
 }
 
 .header {
   padding: 20px;
+  text-align: left;
+}
+
+.formstuff {
+  font-size: 50px;
 }
 
 .gallery {
@@ -24,18 +29,21 @@ body {
   justify-content: center;
 }
 
-#api-images {
-  height: 200px;
-  width: auto;
+.cards {
+  background-color: aqua;
+  padding: 10px;
   margin: 20px;
 }
 
-.btns {
-  font-size: 500%;
+.images {
+  height: 200px;
   width: 200px;
-  padding: 2%;
-  margin: 2%;
-  background-color: aquamarine;
+  object-fit: cover;
+}
+
+.btns {
   border-radius: 100%;
   border: none;
+  padding: 2%;
+  font-size: 20px;
 }

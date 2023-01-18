@@ -1,5 +1,4 @@
 :root {
-    --headerimage: url(https://wallpapercave.com/wp/wp6469956.jpg);
 
     /* typography */
     --h1: 7rem;
@@ -30,7 +29,6 @@ p {
 }
 
 .header {
-    background-image: var(--headerimage);
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: cover;
