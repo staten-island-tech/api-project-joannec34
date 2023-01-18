@@ -1,5 +1,11 @@
 import "../styles/style.css";
 
+const dom = {
+  form: document.querySelector("#form"),
+  removebtn: document.querySelector("#remove-btn"),
+  numberinput: document.querySelector("#numberinput"),
+};
+
 const apikey =
   "live_xiXRiLpizUwPBdLWpw9miwbyUjWdKECZjiGDjhaGRA1FsdiLQRUOUfUgfmbtZRqj";
 
@@ -27,18 +33,19 @@ const createImage = function (data) {
     "beforeend",
     `<div class="cards">
     <img class="images" src="${data.url}" alt="${data.id}">
+    <button class="btns" id="fav-btn">☆</button>
     </div>`
   );
 };
 
-document.querySelector("#form").addEventListener("submit", function (event) {
-  let catnumber = document.querySelector("#numberinput").value;
+dom.form.addEventListener("submit", function (event) {
+  let catnumber = dom.numberinput.value;
   const catapi = `https://api.thecatapi.com/v1/images/search?limit=${catnumber}`;
   event.preventDefault();
   getData(catapi);
 });
 
-document.querySelector("#remove-btn").addEventListener("click", function () {
+dom.removebtn.addEventListener("click", function () {
   document.querySelectorAll(".gallery").forEach((card) => {
     card.textContent = ``;
   });

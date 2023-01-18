@@ -19,23 +19,24 @@
       <h2>for cat enthusiasts.</h2>
   </section>
 
+<section class="topbar">
   <form id="form">
     <div class="formstuff">
-        <label for="catnumber">How many images would you like to generate?</label>
-        <label for="numberinput"></label>
+        <label>How many images would you like to generate?</label>
         <input type="number" id="numberinput" required />
-    </div>
-    <div class="formstuff">
         <input type="submit" class="btns" id="cat-btn" value="meow meow">
     </div>
 </form>
+</section>
 
 <button class="btns" id="remove-btn">remove all</button>
+<button class="btns" id="show-favs">favorites</button>
 
   <section class="gallery">
-   <!--  <div class="cards">
+   <div class="cards">
       <img class="images" src="https://cdn2.thecatapi.com/images/aot.png" alt="example">
-    </div> -->
+      <button class="btns" id="fav-btn">☆</button>
+    </div>
   </section>
 
   <script type="module" src="./js/main.js"></script>

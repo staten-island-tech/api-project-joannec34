@@ -11,7 +11,7 @@ body,
 }
 
 body {
-  background-color: bisque;
+  background-color: ;
 }
 
 .header {
@@ -19,8 +19,17 @@ body {
   text-align: left;
 }
 
+.topbar {
+  background-color: black;
+  color: white;
+}
+
 .formstuff {
   font-size: 50px;
+}
+
+#remove-btn {
+ position: relative;
 }
 
 .gallery {
