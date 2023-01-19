@@ -1,6 +1,6 @@
 :root {
     --headerimg: url(https://free4kwallpapers.com/uploads/wallpaper/minimalistic-cat-wallpaper-1920x1080-wallpaper.jpg);
-    --yellow: #f8ecc4;
+    --yellow: #f6eec7;
     --lightblue: #bbecea;
     --black: #000000;
     --white: #ffffff;
@@ -8,6 +8,7 @@
     /* typography */
     --h1: 10rem;
     --h2: 5rem;
+    --h3: 3rem;
 
 }
 
@@ -17,6 +18,10 @@ h1 {
 
 h2 {
     font-size: var(--h2);
+}
+
+h3 {
+    font-size: var(--h3);
 }
 
 .header {

@@ -5,6 +5,7 @@ const dom = {
   favgallery: document.querySelector(".fav-gallery"),
   form: document.querySelector("#form"),
   removeallbtn: document.querySelector("#removeall-btn"),
+  removeallfavs: document.querySelector("#removeallfavs-btn"),
   numberinput: document.querySelector("#numberinput"),
 };
 
@@ -19,9 +20,11 @@ async function getData(url) {
       throw error(response);
     } else {
       const data = await response.json();
-      console.log(data);
-      data.forEach((array) => {
-        createImage(array);
+      //console.log(data);
+      data.forEach((object) => {
+        createImage(object);
+        favoriteCard();
+        removeCard();
       });
     }
   } catch (error) {
@@ -35,7 +38,10 @@ const createImage = function (data) {
     "beforeend",
     `<div class="cards">
     <img class="images" src="${data.url}" alt="random cat image generated from thecatapi, image data: ${data.id}">
-    <button class="btns" class="pin-btn">☆</button>
+      <div class="card-btns">
+        <button class="btns" id="fav-btn">★</button>
+        <button class="btns" id="remove-btn">remove</button>
+      </div>
     </div>`
   );
 };
@@ -53,6 +59,32 @@ dom.removeallbtn.addEventListener("click", function () {
   });
 });
 
-document.getElementsByClassName(".pin-btn").onclick = function () {
-  dom.favgallery.insertAdjacentHTML("beforeend", `hello`);
-};
+dom.removeallfavs.addEventListener("click", function () {
+  document.querySelectorAll(".fav-gallery").forEach((card) => {
+    card.textContent = ``;
+  });
+});
+
+function favoriteCard() {
+  let favbtns = document.querySelectorAll("#fav-btn");
+  favbtns.forEach((btn) => {
+    btn.addEventListener("click", function (element) {
+      let parentdiv = element.target.parentElement;
+      let card = parentdiv.parentElement;
+      card.remove();
+      console.log(card);
+      dom.favgallery.insertAdjacentHTML("beforeend", `${card.outerHTML}`);
+      removeCard();
+    });
+  });
+}
+
+function removeCard() {
+  let favbtns = document.querySelectorAll("#remove-btn");
+  favbtns.forEach((btn) => {
+    btn.addEventListener("click", function (element) {
+      let parentdiv = element.target.parentElement;
+      parentdiv.parentElement.remove();
+    });
+  });
+}

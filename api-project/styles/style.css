@@ -57,7 +57,11 @@ body {
   transform: scale(1.1);
 }
 
-#removeall-btn {
+.removeall-btns {
+  display: flex;
+}
+
+#removeall-btn, #removeallfavs-btn {
   padding: 2rem;
   margin-left: 5rem;
   border-bottom-left-radius: 2rem;
@@ -65,16 +69,22 @@ body {
   transition: 0.2s;
 }
 
-#removeall-btn:hover {
+#removeall-btn:hover, #removeallfavs-btn:hover {
   padding-top: 4rem;
   margin-bottom: -2rem;
+}
+
+.galleries {
+  display: flex;
 }
 
 .gallery, .fav-gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 2rem;
+  margin: 1rem;
+  margin-top: 2rem;
+  width: 50%;
 }
 
 .cards {
@@ -84,6 +94,7 @@ body {
   margin: 2rem;
   display: flex;
   flex-direction: column;
+  max-height: 40rem;
 }
 
 .images {
@@ -93,3 +104,30 @@ body {
   border-radius: 0.5rem;
 }
 
+.card-btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+#fav-btn, #remove-btn {
+  margin: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 2rem;
+  transition: 0.2s;
+}
+
+.titles {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem;
+}
+
+#title1, #title2 {
+  background-color: var(--yellow);
+  padding: 1rem;
+  margin: 1rem;
+  width: 50%;
+  border-radius: 2rem;
+  text-align: center;
+}

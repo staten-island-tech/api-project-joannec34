@@ -22,23 +22,39 @@
 <section class="topbar">
   <form id="form">
     <div class="formstuff">
-        <label>How many images would you like to generate?</label>
-        <input for="number input" type="number" min="1" max="10" id="numberinput" required />
-        <input type="submit" class="btns" id="cat-btn" value="Give me cats!">
+        <label>How many images would you like to generate ?</label>
+        <input for="number input" type="number" min="1" max="10" id="numberinput" required/>
+        <input type="submit" class="btns" id="cat-btn" value="spawn me some cats !">
     </div>
 </form>
 </section>
 
-<button class="btns" id="removeall-btn">remove all</button>
-
-<section class="fav-gallery">
+<section class="removeall-btns">
+  <button class="btns" id="removeall-btn">remove all</button>
+  <button class="btns" id="removeallfavs-btn">remove all ★</button>
 </section>
 
-<section class="gallery">
+<section class="titles">
+  <h3 id="title1">CATS</h3>
+  <h3 id="title2">FAVORITE CATS</h3>
+</section>
+
+<section class="galleries">
+
+<div class="gallery">
+
 <!-- <div class="cards">
       <img class="images" src="https://cdn2.thecatapi.com/images/aot.png" alt="example">
-      <button class="btns" class="pin-btn">☆</button>
+      <div class="card-btns">
+        <button class="btns" id="fav-btn">★</button>
+        <button class="btns" id="remove-btn">remove</button>
+      </div>
 </div> -->
+</div>
+
+<div class="fav-gallery">
+</div>
+
 </section>
 
   <script type="module" src="./js/main.js"></script>
