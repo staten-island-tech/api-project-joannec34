@@ -24,7 +24,6 @@ async function getData(url) {
       data.forEach((object) => {
         createImage(object);
         favoriteCard();
-        removeCard();
       });
     }
   } catch (error) {
@@ -38,10 +37,7 @@ const createImage = function (data) {
     "beforeend",
     `<div class="cards">
     <img class="images" src="${data.url}" alt="random cat image generated from thecatapi, image data: ${data.id}">
-      <div class="card-btns">
-        <button class="btns" id="fav-btn">★</button>
-        <button class="btns" id="remove-btn">remove</button>
-      </div>
+      <button class="btns" id="fav-btn">☆</button>
     </div>`
   );
 };
@@ -69,22 +65,9 @@ function favoriteCard() {
   let favbtns = document.querySelectorAll("#fav-btn");
   favbtns.forEach((btn) => {
     btn.addEventListener("click", function (element) {
-      let parentdiv = element.target.parentElement;
-      let card = parentdiv.parentElement;
+      let card = element.target.parentElement;
       card.remove();
-      console.log(card);
       dom.favgallery.insertAdjacentHTML("beforeend", `${card.outerHTML}`);
-      removeCard();
-    });
-  });
-}
-
-function removeCard() {
-  let favbtns = document.querySelectorAll("#remove-btn");
-  favbtns.forEach((btn) => {
-    btn.addEventListener("click", function (element) {
-      let parentdiv = element.target.parentElement;
-      parentdiv.parentElement.remove();
     });
   });
 }
