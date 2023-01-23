@@ -67,7 +67,18 @@ function favoriteCard() {
     btn.addEventListener("click", function (element) {
       let card = element.target.parentElement;
       card.remove();
+      console.log(card.outerHTML);
       dom.favgallery.insertAdjacentHTML("beforeend", `${card.outerHTML}`);
     });
   });
 }
+
+function removeCard() {
+  let removebtns = document.querySelectorAll("#remove-btn");
+  removebtns.forEach((btn) => {
+    btn.addEventListener("click", function (element) {
+      element.target.parentElement.remove();
+    });
+  });
+}
+removeCard();
