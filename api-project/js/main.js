@@ -37,7 +37,7 @@ const createImage = function (data) {
     "beforeend",
     `<div class="cards">
     <img class="images" src="${data.url}" alt="random cat image generated from thecatapi, image data: ${data.id}">
-      <button class="btns" id="fav-btn">☆</button>
+      <button class="btns" id="remove-btn">☆</button>
     </div>`
   );
 };
@@ -60,18 +60,6 @@ dom.removeallfavs.addEventListener("click", function () {
     card.textContent = ``;
   });
 });
-
-function favoriteCard() {
-  let favbtns = document.querySelectorAll("#fav-btn");
-  favbtns.forEach((btn) => {
-    btn.addEventListener("click", function (element) {
-      let card = element.target.parentElement;
-      card.remove();
-      console.log(card.outerHTML);
-      dom.favgallery.insertAdjacentHTML("beforeend", `${card.outerHTML}`);
-    });
-  });
-}
 
 function removeCard() {
   let removebtns = document.querySelectorAll("#remove-btn");

@@ -74,17 +74,12 @@ body {
   margin-bottom: -2rem;
 }
 
-.galleries {
-  display: flex;
-}
-
-.gallery, .fav-gallery {
+.gallery{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: 1rem;
   margin-top: 2rem;
-  width: 50%;
 }
 
 .cards {
@@ -102,19 +97,4 @@ body {
   width: 30rem;
   object-fit: cover;
   border-radius: 0.5rem;
-}
-
-.titles {
-  display: flex;
-  justify-content: space-around;
-  margin: 2rem;
-}
-
-#title1, #title2 {
-  background-color: var(--yellow);
-  padding: 1rem;
-  margin: 1rem;
-  width: 50%;
-  border-radius: 2rem;
-  text-align: center;
 }
