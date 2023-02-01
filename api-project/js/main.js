@@ -27,7 +27,7 @@ function create(uuid) {
 const createCard = function (weap) {
   document.querySelector(".api-response").innerHTML = `<div class="card-col1">
       <h3>${weap.displayName}</h3>
-       <h4>${weap.shopData.category}</h4>
+       <h4>${weap.shopData.categoryText}</h4>
        <h4>${weap.shopData.cost} credits</h4>
           <ul class="weapon-stats">
             <li>fire rate: ${weap.weaponStats.fireRate} rds/sec</li>
