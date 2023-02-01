@@ -5,40 +5,104 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CATS</title>
+  <title>VALORANT WEAPONS</title>
   <!-- fonts -->
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Sniglet" />
-
 
 </head>
 
 <body>
 
   <section class="header">
-      <h1>CATS</h1>
-      <h2>for cat enthusiasts.</h2>
+
+    <div class="title">
+      <h1>VALORANT WEAPONS</h1>
+    </div>
+
+    <div class="topbar">
+
+      <div class="col1">
+        <h2>pistols</h2>
+        <button class="btns" id="classic">classic</button>
+        <button class="btns" id="shorty">shorty</button>
+        <button class="btns" id="frenzy">frenzy</button>
+        <button class="btns" id="ghost">ghost</button>
+        <button class="btns" id="sheriff">sheriff</button>
+      </div>
+
+      <div class="col2">
+        <h2>smgs</h2>
+        <button class="btns" id="stinger">stinger</button>
+        <button class="btns" id="spectre">spectre</button>
+        <h2>shotguns</h2>
+        <button class="btns" id="bucky">bucky</button>
+        <button class="btns" id="judge">judge</button>
+      </div>
+
+      <div class="col3">
+        <h2>rifles</h2>
+        <button class="btns" id="bulldog">bulldog</button>
+        <button class="btns" id="guardian">guardian</button>
+        <button class="btns" id="phantom">phantom</button>
+        <button class="btns" id="vandal">vandal</button>
+      </div>
+
+      <div class="col4">
+        <h2>snipers</h2>
+        <button class="btns" id="marshal">marhsal</button>
+        <button class="btns" id="operator">operator</button>
+        <h2>heavy</h2>
+        <button class="btns" id="ares">ares</button>
+        <button class="btns" id="odin">odin</button>
+      </div>
+
+    </div>
+
   </section>
 
-<section class="topbar">
-  <form id="form">
-    <div class="formstuff">
-        <label>How many images would you like to generate ?</label>
-        <input for="number input" type="number" min="1" max="10" id="numberinput" required/>
-        <input type="submit" class="btns" id="cat-btn" value="spawn me some cats !">
+  <section class="api-response">
+    <!-- <div>
+      <h3>phantom</h3>
+      <h4>catagory: heavy weapons // cost: 3200</h4>
+          <ul class="weapon-stats">
+            <li>fire rate 11 rounds/second</li>
+            <li>equip speed 1 second</li>
+            <li>first shot accuracy 0.2 degrees</li>
+            <li>magazine size 30 rounds</li>
+            <li>reload speed 2.5 seconds</li>
+          <ul>
     </div>
-</form>
-</section>
 
-<section class="removeall-btns">
-  <button class="btns" id="removeall-btn">remove all</button>
-</section>
-
-<div class="gallery">
-<!-- <div class="cards">
-      <img class="images" src="https://cdn2.thecatapi.com/images/aot.png" alt="example">
-      <button class="btns" id="fav-btn">☆</button>
-</div> -->
-</div>
+    <div>
+      <img class="images"
+        src="https://media.valorant-api.com/weapons/ee8e8d15-496b-07ac-e5f6-8fae5d4c7b1a/displayicon.png" alt="test">
+      <table class="dmg-table">
+        <tr class="row1">
+          <td>range</td>
+          <td>headshot</td>
+          <td>bodyshot</td>
+          <td>legshot</td>
+        </tr>
+        <tr>
+          <td>0 - 15</td>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>15 - 30</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>30 - 50</td>
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+        </tr>
+      </table>
+    </div> -->
+  </section>
 
   <script type="module" src="./js/main.js"></script>
 
