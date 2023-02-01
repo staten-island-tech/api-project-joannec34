@@ -32,13 +32,17 @@ const createCard = function (weap) {
           <ul class="weapon-stats">
             <li>fire rate: ${weap.weaponStats.fireRate} rds/sec</li>
         <li>equip speed: ${weap.weaponStats.equipTimeSeconds} sec</li>
-        <li>first shot accuracy: ${weap.weaponStats.firstBulletAccuracy} deg</li>
+        <li>first shot accuracy: ${
+          weap.weaponStats.firstBulletAccuracy
+        } deg</li>
         <li>magazine size: ${weap.weaponStats.magazineSize} rds</li>
         <li>reload speed: ${weap.weaponStats.reloadTimeSeconds} sec</li>
           <ul>
     </div>
     <div class="card-col2">
-      <img class="images" src="${weap.displayIcon}" alt="image of the weapon "${weap.displayName}" from VALORANT">
+      <img class="images" src="${weap.displayIcon}" alt="image of the weapon "${
+    weap.displayName
+  }" from VALORANT">
 
       <table class="dmg-table">
         <tr class="row1">
@@ -48,14 +52,20 @@ const createCard = function (weap) {
           <td>legshot</td>
         </tr>
         <tr>
-           <td>${weap.weaponStats.damageRanges[0].rangeStartMeters} - ${weap.weaponStats.damageRanges[0].rangeEndMeters} m</td>
+           <td>${weap.weaponStats.damageRanges[0].rangeStartMeters} - ${
+    weap.weaponStats.damageRanges[0].rangeEndMeters
+  } m</td>
             <td>${weap.weaponStats.damageRanges[0].headDamage} DMG</td>
            <td>${weap.weaponStats.damageRanges[0].bodyDamage} DMG</td>
-           <td>${weap.weaponStats.damageRanges[0].legDamage} DMG</td>
+           <td>${Math.round(
+             weap.weaponStats.damageRanges[0].legDamage
+           )} DMG</td>
         </tr>
       </table>
     </div>`;
 };
+
+//probably a better way to do the things below
 
 function addRows(weap) {
   let array = weap.weaponStats.damageRanges;
@@ -65,10 +75,12 @@ function addRows(weap) {
     table.insertAdjacentHTML(
       "beforeend",
       `<tr>
-    <td>${weap.weaponStats.damageRanges[1].rangeStartMeters} - ${weap.weaponStats.damageRanges[1].rangeEndMeters} m</td>
+    <td>${weap.weaponStats.damageRanges[1].rangeStartMeters} - ${
+        weap.weaponStats.damageRanges[1].rangeEndMeters
+      } m</td>
     <td>${weap.weaponStats.damageRanges[1].headDamage} DMG</td>
     <td>${weap.weaponStats.damageRanges[1].bodyDamage} DMG</td>
-    <td>${weap.weaponStats.damageRanges[1].legDamage} DMG</td>
+    <td>${Math.round(weap.weaponStats.damageRanges[1].legDamage)} DMG</td>
   </tr>`
     );
   } else if (array.length == 3) {
@@ -76,22 +88,28 @@ function addRows(weap) {
     table.insertAdjacentHTML(
       "beforeend",
       `<tr>
-    <td>${weap.weaponStats.damageRanges[1].rangeStartMeters} - ${weap.weaponStats.damageRanges[1].rangeEndMeters} m</td>
+    <td>${weap.weaponStats.damageRanges[1].rangeStartMeters} - ${
+        weap.weaponStats.damageRanges[1].rangeEndMeters
+      } m</td>
     <td>${weap.weaponStats.damageRanges[1].headDamage} DMG</td>
     <td>${weap.weaponStats.damageRanges[1].bodyDamage} DMG</td>
-    <td>${weap.weaponStats.damageRanges[1].legDamage} DMG</td>
+    <td>${Math.round(weap.weaponStats.damageRanges[1].legDamage)} DMG</td>
   </tr>
   <tr>
-    <td>${weap.weaponStats.damageRanges[2].rangeStartMeters} - ${weap.weaponStats.damageRanges[2].rangeEndMeters} m</td>
+    <td>${weap.weaponStats.damageRanges[2].rangeStartMeters} - ${
+        weap.weaponStats.damageRanges[2].rangeEndMeters
+      } m</td>
     <td>${weap.weaponStats.damageRanges[2].headDamage} DMG</td>
     <td>${weap.weaponStats.damageRanges[2].bodyDamage} DMG</td>
-    <td>${weap.weaponStats.damageRanges[2].legDamage} DMG</td>
+    <td>${Math.round(weap.weaponStats.damageRanges[2].legDamage)} DMG</td>
   </tr>`
     );
   } else {
     console.log("1");
   }
 }
+
+//uhh ignore the bad coding below...
 
 document.querySelector("#classic").addEventListener("click", function () {
   create("29a0cfab-485b-f5d5-779a-b59f85e204a8");
